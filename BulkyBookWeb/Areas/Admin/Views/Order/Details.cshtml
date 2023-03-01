@@ -39,12 +39,12 @@
                                     @*If admin then he can modify order details*@
                                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
                                     {
-                                        <input asp-for="@Model.OrderHeader.Name" type="text" class="form-control" />
-                                        <span asp-validation-for="@Model.OrderHeader.Name" class="text-danger"></span>
+                                        <input asp-for="OrderHeader.Name" type="text" class="form-control" />
+                                        <span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
                                     }
                                     else
                                     {
-                                        <input type="text" asp-for="@Model.OrderHeader.Name" readonly class="form-control" />
+                                        <input type="text" asp-for="OrderHeader.Name" readonly class="form-control" />
                                     }
 
                                 </div>
@@ -277,7 +277,7 @@
 
                             @*Buttons*@
 
-                           if (Model.OrderHeader.PaymentStatus == SD.PaymentStatusDelayedPayment
+                           @if (Model.OrderHeader.PaymentStatus == SD.PaymentStatusDelayedPayment
                                 && Model.OrderHeader.OrderStatus == SD.StatusShipped)
                                 {
                                     <input type="submit" class="btn btn-success form-control my-1" value="Pay Now" />
