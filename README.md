@@ -2,6 +2,7 @@
 Website from which user can buy books in Bulk.
 
 E-Commerce website that has four types of users (Admin, Employee, End User, Company User)
+Use of MSSQL server to store the data
 
 ## Features
 + Has implementation of **Identity Management** using dotnet MVC
